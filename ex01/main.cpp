@@ -5,38 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/04 13:31:54 by hchartie          #+#    #+#             */
-/*   Updated: 2026/06/04 14:14:49 by hchartie         ###   ########.fr       */
+/*   Created: 2026/06/04 14:21:01 by hchartie          #+#    #+#             */
+/*   Updated: 2026/06/04 15:18:05 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "PhoneBook.hpp"
 
-void			ftPrint(std::string s);
-std::string		toUpperCase(std::string s);
-
-int main(int ac, char *av[])
+int	main(void)
 {
 	std::string str;
 
-	if (ac != 2)
-		return (1);
-	str	= av[1];
-	ftPrint(toUpperCase(str));
-}
-
-std::string    toUpperCase(std::string s)
-{
-	for (size_t i = 0; i < s.size(); i++)
+	while (1)
 	{
-		if (s[i] >= 'a' && s[i] <= 'z')
-			s[i] = s[i] - 32;
+		std::cout << "Type a command :" << "\n";
+		std::cin >> str;
+		if (!str.compare("ADD"))
+		std::cout << "The command is ADD" << "\n";
+		if (!str.compare("SEARCH"))
+		std::cout << "The command is SEARCH" << "\n";
+		if (!str.compare("EXIT"))
+			return (0);
 	}
-	return (s);
-}
-
-void   ftPrint(std::string s)
-{
-   std::cout << s << "\n";
 }

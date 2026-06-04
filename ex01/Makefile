@@ -1,11 +1,12 @@
-NAME        = megaphone
+NAME        = phonebook
 
 CC          = c++
 CFLAGS      = -Wall -Wextra -Werror -g -std=c++98
 RM          = rm -f
 
 MAIN        = main.cpp
-SRCS        = 
+SRCS        = PhoneBook.cpp	\
+			  Contact.cpp
 OBJS        = $(SRCS:.c=.o)
 
 GREEN       = \033[0;32m
