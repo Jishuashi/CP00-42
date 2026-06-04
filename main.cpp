@@ -6,37 +6,29 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 13:31:54 by hchartie          #+#    #+#             */
-/*   Updated: 2026/06/04 13:58:41 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/06/04 14:14:49 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 
-void   ftPrint(char *s);
-char    *toUpperCase(char	*s);
+void			ftPrint(std::string s);
+std::string		toUpperCase(std::string s);
 
 int main(int ac, char *av[])
 {
-    if (ac != 2)
-        return (1);
-    ftPrint(toUpperCase(av[1]));
+	std::string str;
+
+	if (ac != 2)
+		return (1);
+	str	= av[1];
+	ftPrint(toUpperCase(str));
 }
 
-int	strLen(char *s)
+std::string    toUpperCase(std::string s)
 {
-	int	res = 0;
-
-	while (*s)
-	{
-		s++;
-		res++;
-	}
-	return (res);
-}
-
-char    *toUpperCase(char	*s)
-{
-	for (int i = 0; i < strLen(s); i++)
+	for (size_t i = 0; i < s.size(); i++)
 	{
 		if (s[i] >= 'a' && s[i] <= 'z')
 			s[i] = s[i] - 32;
@@ -44,7 +36,7 @@ char    *toUpperCase(char	*s)
 	return (s);
 }
 
-void   ftPrint(char *s)
+void   ftPrint(std::string s)
 {
    std::cout << s << "\n";
 }
