@@ -1,33 +1,40 @@
 NAME        = phonebook
 
-CC          = c++
-CFLAGS      = -Wall -Wextra -Werror -g -std=c++98
-RM          = rm -f
+CXX         = c++
+CXXFLAGS    = -Wall -Wextra -Werror -std=c++98 -g3
 
-MAIN        = main.cpp
-SRCS        = PhoneBook.cpp	\
-			  Contact.cpp
-OBJS        = $(SRCS:.c=.o)
+RM          = rm -rf
+
+SRCS        = main.cpp \
+              PhoneBook.cpp \
+              Contact.cpp
+
+OBJS        = $(SRCS:%.cpp=obj/%.o)
 
 GREEN       = \033[0;32m
+YELLOW      = \033[0;33m
+BLUE        = \033[0;34m
 RESET       = \033[0m
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(MAIN)
-	@echo -e "$(GREEN)Compiling $(NAME)...$(RESET)"
-	$(CC) $(CFLAGS) $(MAIN) $(OBJS) -o $(NAME)
+$(NAME): $(OBJS)
+	@printf "$(BLUE)Linking $(NAME)...$(RESET)\n"
+	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+	@printf "$(GREEN)Compilation successful!$(RESET)\n"
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+obj/%.o: %.cpp
+	@mkdir -p obj
+	@printf "$(YELLOW)Compiling $<...$(RESET)\n"
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	@echo "Cleaning objects..."
-	$(RM) $(OBJS)
+	@printf "$(YELLOW)Cleaning object files...$(RESET)\n"
+	@$(RM) obj
 
 fclean: clean
-	@echo "Cleaning executable and library..."
-	$(RM) $(NAME)
+	@printf "$(YELLOW)Cleaning executable $(NAME)...$(RESET)\n"
+	@$(RM) $(NAME)
 
 re: fclean all
 

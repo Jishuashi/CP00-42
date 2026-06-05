@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 14:21:01 by hchartie          #+#    #+#             */
-/*   Updated: 2026/06/04 15:45:09 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/06/05 13:42:59 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 int	main(void)
 {
-	std::string str;
+	std::string	str;
+	PhoneBook	phonebook;
 
 	while (1)
 	{
-		std::cout << "Type a command :" << "\n";
+		std::cout << "Type a command (ADD, SEARCH, EXIT):" << "\n";
 		std::cin >> str;
 		if (!str.compare("ADD"))
-		std::cout << "The command is ADD" << "\n";
+			phonebook.add();
 		if (!str.compare("SEARCH"))
 		std::cout << "The command is SEARCH" << "\n";
 		if (!str.compare("EXIT"))

@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 15:14:20 by hchartie          #+#    #+#             */
-/*   Updated: 2026/06/04 16:18:08 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/06/05 14:35:31 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,25 @@ class Contact
 	private:
 		std::string fName;
 		std::string lName;
+		std::string nickname;
 		std::string number;
-		std::string adress;
+		std::string secret;
 	public :
-    Contact ();
+		Contact();
+    	Contact (std::string pFName, std::string pLName, std::string pNickname,
+			std::string pNumber, std::string pSecret);
 };
 
 class PhoneBook
 {
     private:
         Contact cont[8];
+		int		idx;
+
+		std::string input(std::string pMsg);
     public:
         PhoneBook();
+		void	add();
 };
 
 #endif
