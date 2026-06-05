@@ -6,16 +6,10 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 14:21:03 by hchartie          #+#    #+#             */
-/*   Updated: 2026/06/04 15:22:26 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/06/04 16:09:53 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-class PhoneBook
-{
-    PhoneBook(Contact::Contact)
-    {
-
-    }
-};
+PhoneBook::PhoneBook() {}

@@ -6,15 +6,10 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 14:21:05 by hchartie          #+#    #+#             */
-/*   Updated: 2026/06/04 15:22:14 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/06/04 16:12:19 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-class Contact
-{
-    Contact ()
-    {
-    }
-}
+Contact::Contact () {}
