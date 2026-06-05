@@ -1,3 +1,6 @@
 a.out
 *.txt
 megaphone
+phonebook
+.vscode/
+*.o
