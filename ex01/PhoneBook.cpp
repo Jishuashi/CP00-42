@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 14:21:03 by hchartie          #+#    #+#             */
-/*   Updated: 2026/06/10 14:05:53 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/06/10 14:45:59 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,30 @@ void PhoneBook::add()
 	std::string nickname;
 	std::string number;
 	std::string secret;
+	int			empty;
 
+	empty = 0;
 	fName = input("First Name :");
+	if (fName.size() == 0)
+		empty = 1;
 	lName = input("Last Name :");
+	if (lName.size() == 0)
+		empty = 1;
 	nickname = input("Nickname :");
+	if (nickname.size() == 0)
+		empty = 1;
 	number = input("Phone Number :");
+	if (number.size() == 0)
+		empty = 1;
 	secret = input("Darkest Secret :");
+	if (secret.size() == 0)
+		empty = 1;
 
+	if (empty == 1)
+	{
+		std::cerr << "A Contact can't have a empty field" << std::endl;
+		return ;
+	}
 	Contact nCont(fName, lName, nickname, number, secret);
 
 	_cont[_idx % 8] = nCont;
@@ -62,7 +79,7 @@ void	PhoneBook::search()
 	if (id >= 0 && id < len)
 		this->_cont[id].printContact();
 	else 
-		std::cout << "No entry for index : " << resp << std::endl;
+		std::cerr << "No entry for index : " << resp << std::endl;
 }
 
 std::string PhoneBook::input(std::string pMsg)

@@ -6,7 +6,7 @@
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 12:44:26 by hchartie          #+#    #+#             */
-/*   Updated: 2026/06/10 13:11:15 by hchartie         ###   ########.fr       */
+/*   Updated: 2026/06/10 14:46:29 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,10 @@ std::string	rightAlignSized(int	pSize, std::string pStr)
 	if ((size_t)pSize == pStr.size())
 		res = pStr;
 	else if (pStr.size() > (size_t)pSize)
-	{
 		res = pStr.substr(0, pSize - 1) + ".";
-	}
 	else
 	{
 		diff = pSize - (int)pStr.size();
-		
 		i = 0;
 		while (i < diff)
 		{
