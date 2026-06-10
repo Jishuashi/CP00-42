@@ -6,3 +6,4 @@ phonebook
 *.o
 *.yml
 *.plist
+obj
