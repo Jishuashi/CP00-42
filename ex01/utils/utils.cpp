@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/04 14:21:01 by hchartie          #+#    #+#             */
-/*   Updated: 2026/06/10 13:32:34 by hchartie         ###   ########.fr       */
+/*   Created: 2026/06/10 12:44:26 by hchartie          #+#    #+#             */
+/*   Updated: 2026/06/10 13:11:15 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "utils.hpp"
 
-int	main(void)
+std::string	rightAlignSized(int	pSize, std::string pStr)
 {
-	std::string	str;
-	PhoneBook	phonebook;
+	std::string res;
+	int			diff;
+	int			i;
 
-	while (1)
+	if ((size_t)pSize == pStr.size())
+		res = pStr;
+	else if (pStr.size() > (size_t)pSize)
 	{
-		std::cout << "Type a command (ADD, SEARCH, EXIT):" << "\n";
-		std::getline(std::cin, str);
-		if (!str.compare("ADD"))
-			phonebook.add();
-		if (!str.compare("SEARCH"))
-			phonebook.search();
-		if (!str.compare("EXIT"))
-			return (0);
+		res = pStr.substr(0, pSize - 1) + ".";
 	}
+	else
+	{
+		diff = pSize - (int)pStr.size();
+		
+		i = 0;
+		while (i < diff)
+		{
+			res.append(" ");
+			i++;
+		}
+		res.append(pStr);
+	}
+	return (res);
 }

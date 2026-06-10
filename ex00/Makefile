@@ -20,7 +20,8 @@ $(NAME): $(OBJS)
 	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 	@printf "$(GREEN)Compilation successful!$(RESET)\n"
 
-%.o: %.cpp
+obj/%.o: %.cpp
+	@mkdir -p $(@D)
 	@printf "$(YELLOW)Compiling $<...$(RESET)\n"
 	@$(CXX) $(CXXFLAGS) -c $< -o $@
 

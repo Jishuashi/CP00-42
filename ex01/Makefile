@@ -5,9 +5,10 @@ CXXFLAGS    = -Wall -Wextra -Werror -std=c++98 -g3
 
 RM          = rm -rf
 
-SRCS        = main.cpp \
-              PhoneBook.cpp \
-              Contact.cpp
+SRCS        = main.cpp			\
+              PhoneBook.cpp		\
+              Contact.cpp		\
+			  utils/utils.cpp	\
 
 OBJS        = $(SRCS:%.cpp=obj/%.o)
 
@@ -24,7 +25,7 @@ $(NAME): $(OBJS)
 	@printf "$(GREEN)Compilation successful!$(RESET)\n"
 
 obj/%.o: %.cpp
-	@mkdir -p obj
+	@mkdir -p $(@D)
 	@printf "$(YELLOW)Compiling $<...$(RESET)\n"
 	@$(CXX) $(CXXFLAGS) -c $< -o $@
 

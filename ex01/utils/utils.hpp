@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   utils.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchartie <hchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/04 14:21:01 by hchartie          #+#    #+#             */
-/*   Updated: 2026/06/10 13:32:34 by hchartie         ###   ########.fr       */
+/*   Created: 2026/06/10 12:44:30 by hchartie          #+#    #+#             */
+/*   Updated: 2026/06/10 13:02:52 by hchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#ifndef UTILS_HPP
+# define UTILS_HPP
+# include <iostream>
+# include <iomanip>
+# include <string>
 
-int	main(void)
-{
-	std::string	str;
-	PhoneBook	phonebook;
+std::string	rightAlignSized(int	pSize, std::string pStr);
 
-	while (1)
-	{
-		std::cout << "Type a command (ADD, SEARCH, EXIT):" << "\n";
-		std::getline(std::cin, str);
-		if (!str.compare("ADD"))
-			phonebook.add();
-		if (!str.compare("SEARCH"))
-			phonebook.search();
-		if (!str.compare("EXIT"))
-			return (0);
-	}
-}
+#endif
