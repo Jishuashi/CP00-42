@@ -8,3 +8,6 @@ phonebook
 *.plist
 obj
 *.log
+*.xml
+.idea
+test
